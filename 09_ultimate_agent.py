@@ -8,7 +8,8 @@ from langgraph.prebuilt import create_react_agent
 # 1. 基础配置
 os.environ['http_proxy'] = 'http://127.0.0.1:10808' # 确保是你 Mac 的端口
 os.environ['https_proxy'] = 'http://127.0.0.1:10808'
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAYIGYa-mWetYw2yjSjmCgja7CH43h-OjM"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyB5ZLe3z3FTLsm557vWkIjrIGVmIDekooY"
+# print(f"🕵️ 当前实际使用的密钥前十位是: {os.environ.get('GOOGLE_API_KEY', '没找到')[:10]}...")
 
 print("🔗 正在加载组件...")
 llm = ChatGoogleGenerativeAI(model="gemini-flash-latest")
@@ -55,7 +56,8 @@ agent = create_react_agent(llm, tools)
 # 🎬 终极测试：见证 AI 的自主决策
 # ==========================================
 print("\n" + "="*50)
-user_query = "我是北京分部的员工，明天我想带我的小金毛去公司上班，可以吗？"
+# user_query = "我是北京分部的员工，明天我想带我的小金毛去公司上班，可以吗？"
+user_query = "我是北京分部的员工，明天天气怎样？"
 print(f"🧑 用户刁钻提问: {user_query}")
 print("="*50)
 
